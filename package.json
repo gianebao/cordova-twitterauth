@@ -1,0 +1,17 @@
+{
+    "version": "0.0.1",
+    "name": "co.catchapp.TwitterAuth",
+    "cordova_name": "Keyboard",
+    "description": "Twitter Auth Plugin",
+    "license": "Apache 2.0",
+    "repo": "https://github.com/gpstmp/cordova-twitterauth.git",
+    "issue": "https://github.com/gpstmp/cordova-twitterauth/issues",
+    "keywords": [
+        "Ionic",
+        "twitter auth"
+    ],
+    "platforms": [
+        "ios"
+    ],
+    "engines": []
+}
