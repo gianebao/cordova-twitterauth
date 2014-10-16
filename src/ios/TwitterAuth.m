@@ -1,5 +1,8 @@
-#import "TwitterAuth.h"
+#include <sys/types.h>
+#include <sys/sysctl.h>
+
 #import <Cordova/CDV.h>
+#import "TwitterAuth.h"
 
 @implementation TwitterAuth
 
