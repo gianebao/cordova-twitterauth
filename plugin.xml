@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="co.catchapp.TwitterAuth"
+    version="1.0.3">
+    <name>TwitterAuth</name>
+    <description>Catchapp twitter login plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>Twitter,oAuth</keywords>
+
+  <js-module src="www/TwitterAuth.js" name="TwitterAuth">
+    <clobbers target="cordova.plugins.TwitterAuth" />
+  </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="TwitterAuth">
+                <param name="ios-package" value="TwitterAuth" onload="true" />
+            </feature>
+        </config-file>
+
+        <header-file src="src/ios/TwitterAuth.h" />
+        <source-file src="src/ios/TwitterAuth.m" />
+
+        <framework src="Twitter.framework" />
+        <framework src="Accounts.framework" weak="true" />
+
+    </platform>
+
+</plugin>
