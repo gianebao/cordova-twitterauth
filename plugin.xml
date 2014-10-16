@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     id="co.catchapp.TwitterAuth"
-    version="1.0.3">
+    version="0.1.0">
     <name>TwitterAuth</name>
     <description>Catchapp twitter login plugin</description>
     <license>Apache 2.0</license>
@@ -22,9 +22,6 @@
 
         <header-file src="src/ios/TwitterAuth.h" />
         <source-file src="src/ios/TwitterAuth.m" />
-
-        <framework src="Twitter.framework" />
-        <framework src="Accounts.framework" weak="true" />
 
     </platform>
 
