@@ -23,11 +23,10 @@
     ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
     NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
+    NSString *username = @"noname";
     if (accountsArray && accountsArray.count) {
         ACAccount *twitterAccount = [accountsArray objectAtIndex:0];
-        NSString *username = twitterAccount.username;
-    } else {
-        NSString *username = @"noname";
+        *username = twitterAccount.username;
     }
 
     NSString *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:username];
