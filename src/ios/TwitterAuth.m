@@ -23,7 +23,7 @@
     ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
     NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
-    if (accountsArray.count > 0) {
+    if (accountsArray && accountsArray.count) {
         ACAccount *twitterAccount = [accountsArray objectAtIndex:0];
         NSString *username = twitterAccount.username;
     } else {
