@@ -22,15 +22,17 @@
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
-    NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
-    NSString *username = @"noname";
-    if (accountsArray && accountsArray.count) {
-        ACAccount *twitterAccount = [accountsArray objectAtIndex:0];
-        *username = twitterAccount.username;
-    }
+    [accountStore requestAccessToAccountsWithType:accountType withCompletionHandler:^(BOOL granted, NSError *error) {
+        NSString *username = @"noname";
+        if(granted) {
+            NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
+            ACAccount *twitterAccount = [accountsArray objectAtIndex:0];
+            username = twitterAccount.username;
 
-    NSString *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:username];
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+            NSString *pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:username];
+            [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+        }
+    }];
 }
 
 @end
