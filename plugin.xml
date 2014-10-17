@@ -23,6 +23,9 @@
         <header-file src="src/ios/TwitterAuth.h" />
         <source-file src="src/ios/TwitterAuth.m" />
 
+        <framework src="Twitter.framework" />
+        <framework src="Accounts.framework" weak="true" />
+
     </platform>
 
 </plugin>
