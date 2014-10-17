@@ -8,8 +8,8 @@
 #import <Cordova/CDVPlugin.h>
 #import <Cordova/CDVJSON.h>
 
-@interface TwitterAuth : CDVPlugin
-{}
+@interface TwitterAuth : CDVPlugin{
+}
 
 - (void)echo:(CDVInvokedUrlCommand*)command;
 

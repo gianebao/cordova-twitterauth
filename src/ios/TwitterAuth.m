@@ -1,10 +1,6 @@
-#include <sys/types.h>
-#include <sys/sysctl.h>
-
-#import <Cordova/CDV.h>
+#import "TwitterAuth.h"
 #import <Cordova/CDVJSON.h>
 #import <Cordova/CDVAvailability.h>
-#import "TwitterAuth.h"
 
 @implementation TwitterAuth
 
@@ -25,7 +21,7 @@
 -(void)loginWithBlock:(CDVInvokedUrlCommand*)command {
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
     ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-
+    
     NSArray *accountsArray = [accountStore accountsWithAccountType:accountType];
     ACAccount *twitterAccount = [accountsArray objectAtIndex:0];
     NSString *username = twitterAccount.username;
